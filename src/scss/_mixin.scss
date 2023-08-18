@@ -1,0 +1,28 @@
+@mixin dimension($height,$width){
+    height: $height;
+    width: $width;
+}
+
+@mixin display_setting($flexDir,$justify,$align){
+    display: flex;
+    flex-direction: $flexDir;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin pseudo_element($top-left,$top-right,$bottom-left,$bottom-right){
+    content: " ";
+    position: absolute;
+    border-top-left-radius:$top-left;
+    border-top-right-radius: $top-right;
+    border-bottom-left-radius: $bottom-left;
+    border-bottom-right-radius: $bottom-right;
+}
+
+@mixin chat_style($bgColor,$color){
+    padding: 2px 8px;
+    background-color: $bgColor;
+    border-radius: 20px;
+    color: $color;
+    font-size: 10px;
+}
