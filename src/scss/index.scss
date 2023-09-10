@@ -47,6 +47,16 @@ body{
     left: 20%;
     top: 5%;
     z-index: 2;
+    animation: load-chat-app 1s ease-in-out 1s;
+
+    @keyframes load-chat-app{
+        0%{
+            transform: translateX(-100%);
+        }
+        100%{
+            transform: translateX(0);
+        }
+    }
 
     .header-container::before{
         @include dimension(2rem, 70%);
@@ -62,24 +72,42 @@ body{
         gap: 1rem;
         border-radius: 30px 30px 5px 5px;
         padding: 1.7rem 1rem 10px;
+        animation:header-load 1s ease-in-out 1.5s;
+
+        @keyframes header-load{
+            0%{
+                transform: translateY(-100%);
+            }
+            100%{
+                transform: translateY(0);
+            }
+        }
 
         i{
             color: $White;
+            animation:pop-content 1s ease-in-out 2.5s forwards;
+            transform: scale(0);
         }
 
         .ellipsis{
             margin-left: auto;
+            animation:pop-content 1s ease-in-out 2.5s forwards;
+            transform: scale(0);
         }
 
         img{
             @include dimension(30px,30px);
             border: 2px solid $White;
             border-radius: 50%;
+            animation:pop-content 1s ease-in-out 2.5s forwards;
+            transform: scale(0);
         }
 
         .profile{
             @include display_setting(column,center,flex-start);
             gap: 5px;
+            animation:pop-content 1s ease-in-out 2.5s forwards;
+            transform: scale(0);
             .name{
                 color: $PaleViolet;
                 font-weight: 500;
@@ -89,6 +117,18 @@ body{
                 color: $PaleViolet2;
                 font-size: 12px;
                 margin: 0
+            }
+        }
+
+        @keyframes pop-content{
+            0%{
+                transform: scale(0);
+            }
+            90%{
+                transform: scale(1.2);
+            }
+            100%{
+                transform: scale(1);;
             }
         }
     }
@@ -186,7 +226,18 @@ body{
 
 .content-container{
     @include display_setting(column,center,flex-start);
+    animation: content-load 1s ease-in-out;
     z-index: 0;
+
+    @keyframes content-load{
+        0%{
+          transform: translateX(100%);
+        }
+        100%{
+            transform: translateX(0);
+        }
+    }
+
     .content-header{
         margin-bottom: 0;
         color: $VeryDarkDesaturatedViolet;

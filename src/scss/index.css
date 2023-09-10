@@ -56,6 +56,15 @@ body {
   left: 20%;
   top: 5%;
   z-index: 2;
+  animation: load-chat-app 1s ease-in-out 1s;
+}
+@keyframes load-chat-app {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 .mobile-view-chat .header-container::before {
   height: 2rem;
@@ -79,18 +88,33 @@ body {
   gap: 1rem;
   border-radius: 30px 30px 5px 5px;
   padding: 1.7rem 1rem 10px;
+  animation: header-load 1s ease-in-out 1.5s;
+}
+@keyframes header-load {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 .mobile-view-chat .header-container i {
   color: hsl(0, 0%, 100%);
+  animation: pop-content 1s ease-in-out 2.5s forwards;
+  transform: scale(0);
 }
 .mobile-view-chat .header-container .ellipsis {
   margin-left: auto;
+  animation: pop-content 1s ease-in-out 2.5s forwards;
+  transform: scale(0);
 }
 .mobile-view-chat .header-container img {
   height: 30px;
   width: 30px;
   border: 2px solid hsl(0, 0%, 100%);
   border-radius: 50%;
+  animation: pop-content 1s ease-in-out 2.5s forwards;
+  transform: scale(0);
 }
 .mobile-view-chat .header-container .profile {
   display: flex;
@@ -98,6 +122,8 @@ body {
   justify-content: center;
   align-items: flex-start;
   gap: 5px;
+  animation: pop-content 1s ease-in-out 2.5s forwards;
+  transform: scale(0);
 }
 .mobile-view-chat .header-container .profile .name {
   color: hsl(276, 100%, 90%);
@@ -108,6 +134,17 @@ body {
   color: hsl(276, 100%, 80%);
   font-size: 12px;
   margin: 0;
+}
+@keyframes pop-content {
+  0% {
+    transform: scale(0);
+  }
+  90% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 .mobile-view-chat .body {
   display: flex;
@@ -228,7 +265,16 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  animation: content-load 1s ease-in-out;
   z-index: 0;
+}
+@keyframes content-load {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 .content-container .content-header {
   margin-bottom: 0;
