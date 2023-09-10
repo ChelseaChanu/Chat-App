@@ -17,11 +17,11 @@ function App() {
             <RecieverChat chatContent="That sounds great. I’d be happy with that."/>
             <RecieverChat chatContent="Could you send over some pictures of your dog, please?"/>
             <Images/>
-            <SenderChat chatContent="Here are a few pictures. She’s a happy girl!"/>
-            <SenderChat chatContent="Can you make it?"/>
-            <RecieverChat chatContent="She looks so happy! The time we discussed works. How long shall I take her out for?"/>
-            <Payment {...{payContent:"30 minute walk", amount:"$29" }}/>
-            <Payment {...{payContent:"1 hour walk", amount:"$49" }}/>
+            <SenderChat chatContent="Here are a few pictures. She’s a happy girl!" className="sender-1"/>
+            <SenderChat chatContent="Can you make it?" className="sender-2"/>
+            <RecieverChat chatContent="She looks so happy! The time we discussed works. How long shall I take her out for?" className="reciever-3"/>
+            <Payment {...{payContent:"30 minute walk", amount:"$29", className:"payment-1"}}/>
+            <Payment {...{payContent:"1 hour walk", amount:"$49", className:"payment-2" }}/>
             <InputMessage/>
           </div>
         </div>

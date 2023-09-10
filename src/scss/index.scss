@@ -47,7 +47,8 @@ body{
     left: 20%;
     top: 5%;
     z-index: 2;
-    animation: load-chat-app 1s ease-in-out 1s;
+    opacity: 0;
+    animation: load-chat-app 1s ease-in-out 0.3s forwards;
 
     @keyframes load-chat-app{
         0%{
@@ -55,6 +56,7 @@ body{
         }
         100%{
             transform: translateX(0);
+            opacity: 1;
         }
     }
 
@@ -72,26 +74,27 @@ body{
         gap: 1rem;
         border-radius: 30px 30px 5px 5px;
         padding: 1.7rem 1rem 10px;
-        animation:header-load 1s ease-in-out 1.5s;
+        opacity: 0;
+        animation:header-load 0.8s ease-in-out 0.7s forwards;
 
         @keyframes header-load{
             0%{
-                transform: translateY(-100%);
+                opacity: 0;
             }
             100%{
-                transform: translateY(0);
+                opacity: 1;
             }
         }
 
         i{
             color: $White;
-            animation:pop-content 1s ease-in-out 2.5s forwards;
+            animation:pop-content 0.8s ease-in-out 1s forwards;
             transform: scale(0);
         }
 
         .ellipsis{
             margin-left: auto;
-            animation:pop-content 1s ease-in-out 2.5s forwards;
+            animation:pop-content 0.8s ease-in-out 1s forwards;
             transform: scale(0);
         }
 
@@ -99,14 +102,14 @@ body{
             @include dimension(30px,30px);
             border: 2px solid $White;
             border-radius: 50%;
-            animation:pop-content 1s ease-in-out 2.5s forwards;
+            animation:pop-content 0.8s ease-in-out 1s forwards;
             transform: scale(0);
         }
 
         .profile{
             @include display_setting(column,center,flex-start);
             gap: 5px;
-            animation:pop-content 1s ease-in-out 2.5s forwards;
+            animation:pop-content 0.8s ease-in-out 1s forwards;
             transform: scale(0);
             .name{
                 color: $PaleViolet;
@@ -142,6 +145,19 @@ body{
             @include dimension(auto,140px);
             @include chat_style($GrayishBlue,$ModerateViolet);
             border-bottom-left-radius: 5px;
+            transform: scale(0);
+        }
+
+        .reciever-chat:nth-child(1){
+            animation:pop-content 0.8s ease-in-out 1.2s forwards;
+        }
+
+        .reciever-chat:nth-child(2){
+            animation:pop-content 0.8s ease-in-out 1.4s forwards;
+        }
+
+        .reciever-3{
+            animation:pop-content 0.8s ease-in-out 2.2s forwards;
         }
 
         .sender-chat{
@@ -151,6 +167,15 @@ body{
             box-shadow:  6px 8px 6px -6px $DarkGrayishViolet;
             color: $DesaturatedDarkViolet;
             margin-left: auto;
+            transform: scale(0);
+        }
+
+        .sender-1{
+            animation:pop-content 0.8s ease-in-out 1.8s forwards;
+        }
+
+        .sender-2{
+            animation:pop-content 0.8s ease-in-out 2s forwards;
         }
 
         .payment-container{
@@ -160,6 +185,7 @@ body{
             background-image: linear-gradient(to right, $LightMagenta,$LightViolet);
             border-radius: 20px;
             border-bottom-left-radius: 5px;
+            transform: scale(0);
             padding: 14px;
         
             .circle{
@@ -182,9 +208,19 @@ body{
                 margin-left: auto;
             }
         }
+
+        .payment-1{
+            animation:pop-content 0.8s ease-in-out 2.4s forwards;
+        }
+
+        .payment-2{
+            animation:pop-content 0.8s ease-in-out 2.6s forwards;
+        }
     
         .image-container{
             @include display_setting(row,center,center);
+            transform: scale(0);
+            animation:pop-content 0.8s ease-in-out 1.6s forwards;
             margin-left: auto;
             gap: 10px;
             img{
@@ -199,6 +235,8 @@ body{
             background-color: $White;
             border-radius: 20px;
             padding: 5px;
+            transform: scale(0);
+            animation:pop-content 0.8s ease-in-out 2.8s forwards;
             input{
                 @include dimension(auto,90%);
                 padding: 0 15px;
